@@ -1,0 +1,10 @@
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo vim /etc/sysctl.conf #net.ipv4.ip_forward=1 uncomment
+sudo route add -net 10.0.0.0/24 dev enp2s0
+sudo route add -net 10.0.1.0/24 dev enp3s0
+sudo route add -net 127.0.0.0/24 dev enp2s0
+sudo route add -net 127.0.0.0/24 dev enp3s0
+sudo iptables -A FORWARD -i enp2s0 -o enp3s0 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A FORWARD -i enp3s0 -o enp2s0 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A FORWARD -i lo -o enp2s0 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A FORWARD -i lo -o enp3s0 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
