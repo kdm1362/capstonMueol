@@ -1,3 +1,6 @@
+# this is configure odyssey as hub if using router for composit robot's internal network ignore it.
+# this ubuntu bash commends are not working nicely
+
 sudo sysctl -w net.ipv4.ip_forward=1
 sudo vim /etc/sysctl.conf #net.ipv4.ip_forward=1 uncomment
 sudo route add -net 10.0.0.0/24 dev enp2s0

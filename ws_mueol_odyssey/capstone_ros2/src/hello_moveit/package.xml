@@ -2,10 +2,10 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>hello_moveit</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="robotic@todo.todo">robotic</maintainer>
-  <license>TODO: License declaration</license>
+  <version>0.0.1</version>
+  <description>This is algorithm test for moveit control interface</description>
+  <maintainer email="kdm1362@gmail.com">Dongmyung Kim</maintainer>
+  <license>it follow moveit tutorial's license</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
